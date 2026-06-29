@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Eduarda Cristina dos Santos, Analista de Processos na indústria de máquinas. Automação, compliance fiscal e engenharia de processos.">
+  <meta name="author" content="Eduarda Cristina dos Santos">
+  <meta name="theme-color" content="#1a3d5c">
+  <title>Eduarda Cristina dos Santos | Analista de Processos & Automação</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <a href="#inicio" class="skip-link">Ir para o conteúdo principal</a>
+
+  <header class="mobile-header" aria-label="Navegação mobile">
+    <span class="mobile-header__brand">ECS · Processos</span>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+  <div class="app-layout">
+
+    <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
+      <div class="sidebar__brand">
+        <div class="sidebar__logo">
+          <div class="sidebar__logo-icon" aria-hidden="true">EC</div>
+          <div>
+            <div class="sidebar__name">Eduarda Cristina<br>dos Santos</div>
+          </div>
+        </div>
+        <p class="sidebar__role">Analista de Processos · Indústria</p>
+        <p class="sidebar__doc-id">DOC-2025-ECS-002</p>
+      </div>
+
+      <nav class="sidebar__nav" aria-label="Seções do portfólio">
+        <ul class="sidebar__nav-list">
+          <li><a href="#inicio" class="sidebar__link is-active" data-section="inicio"><span class="sidebar__link-num">01</span> Início</a></li>
+          <li><a href="#sobre" class="sidebar__link" data-section="sobre"><span class="sidebar__link-num">02</span> Perfil</a></li>
+          <li><a href="#casos" class="sidebar__link" data-section="casos"><span class="sidebar__link-num">03</span> Estudos de Caso</a></li>
+          <li><a href="#dashboard" class="sidebar__link" data-section="dashboard"><span class="sidebar__link-num">04</span> Painel Analítico</a></li>
+          <li><a href="#competencias" class="sidebar__link" data-section="competencias"><span class="sidebar__link-num">05</span> Competências</a></li>
+          <li><a href="#experiencia" class="sidebar__link" data-section="experiencia"><span class="sidebar__link-num">06</span> Experiência</a></li>
+          <li><a href="#formacao" class="sidebar__link" data-section="formacao"><span class="sidebar__link-num">07</span> Formação</a></li>
+          <li><a href="#contato" class="sidebar__link" data-section="contato"><span class="sidebar__link-num">08</span> Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar__footer">
+        <div class="sidebar__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Xanxerê, SC</span>
+        </div>
+        <div class="sidebar__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+5549998255869">(49) 99825-5869</a>
+        </div>
+        <div class="sidebar__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:eduardadossantos015@gmail.com">eduardadossantos015@gmail.com</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="mainContent">
+
+      <!-- 01 Hero -->
+      <section id="inicio" class="hero" aria-labelledby="hero-title">
+        <div class="hero__inner reveal">
+          <div class="hero__badge">
+            <span class="hero__badge-dot" aria-hidden="true"></span>
+            Analista de Processos Júnior · Vantec Indústria de Máquinas
+          </div>
+
+          <h1 id="hero-title" class="hero__title">
+            Transformando <em>rotinas burocráticas</em> em processos inteligentes
+          </h1>
+
+          <p class="hero__tagline">
+            Automação, governança de dados e validação técnica, unindo Engenharia Civil (4º período) à atuação prática na indústria de máquinas, conectando engenharia, produção e suprimentos.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#casos" class="btn btn--primary">
+              Ver estudos de caso
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#contato" class="btn btn--outline">Entrar em contato</a>
+          </div>
+
+          <div class="hero__metrics" role="list" aria-label="Indicadores de impacto">
+            <div class="hero__metric" role="listitem">
+              <div class="hero__metric-value">13 a 24h</div>
+              <div class="hero__metric-label">Economia mensal de trabalho manual com automação ERP</div>
+            </div>
+            <div class="hero__metric" role="listitem">
+              <div class="hero__metric-value">0</div>
+              <div class="hero__metric-label">Erros de digitação em dados fiscais primários</div>
+            </div>
+            <div class="hero__metric" role="listitem">
+              <div class="hero__metric-value">100%</div>
+              <div class="hero__metric-label">Foco em impacto gerado na manufatura industrial</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 Sobre -->
+      <section id="sobre" class="about-section" aria-labelledby="sobre-title">
+        <div class="section-container reveal">
+          <p class="section-label">02 · Perfil Profissional</p>
+          <h2 id="sobre-title" class="section-title">Análise rigorosa, viabilidade técnica e automação na prática</h2>
+          <p class="section-lead">
+            Estudante de Engenharia Civil e Analista de Processos na indústria de máquinas, onde faço a ponte estratégica entre engenharia, produção e suprimentos.
+          </p>
+
+          <div class="about-grid">
+            <div class="about-text">
+              <p>
+                Sou estudante de Engenharia Civil e atuo como Analista de Processos na indústria de máquinas, onde faço a ponte estratégica entre a engenharia, a produção e os suprimentos. Meu diferencial está na minha capacidade analítica e no rigor com a viabilidade técnica: entendo a dinâmica de custos operacionais (CAPEX/OPEX), faço a leitura crítica de projetos e identifico riscos técnicos antes que cheguem ao chão de fábrica.
+              </p>
+              <p>
+                Mais do que analisar processos, tenho uma paixão genuína por eliminar burocracias e reduzir o tempo gasto em tarefas repetitivas. Minha motivação vem de construir soluções, seja via VBA, PowerShell ou macros, que cortam erros humanos pela raiz e permitem que a equipe foque no que realmente traz valor.
+              </p>
+              <p>
+                Gosto de entregar resultados práticos, sou proativa e foco sempre na redução de custos, no ganho de eficiência e na conformidade das operações operacionais e financeiras.
+              </p>
+            </div>
+
+            <aside class="about-highlight">
+              <h3 class="about-highlight__title">Diferenciais comprovados</h3>
+              <ul class="about-highlight__list">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Validação e viabilidade técnica de projetos antes do chão de fábrica
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Automação e governança no ERP Logix (MAN10021)
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Matriz técnica de classificação fiscal (NCM) e compliance tributário
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Mapeamento AS-IS e redesenho de fluxos operacionais
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Automação ativa em VBA e PowerShell para eliminar retrabalho
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- 03 Estudos de Caso -->
+      <section id="casos" class="cases-section" aria-labelledby="casos-title">
+        <div class="section-container reveal">
+          <p class="section-label">03 · Estudos de Caso</p>
+          <h2 id="casos-title" class="section-title">Vitrine de soluções com impacto real na Vantec</h2>
+          <p class="section-lead">
+            Cada projeto documenta o desafio, a solução implementada e os resultados mensuráveis. Metodologia: mapeamento AS-IS → desenho TO-BE → implementação → governança.
+          </p>
+
+          <!-- Case 1: Automação ERP -->
+          <article class="case-card">
+            <header class="case-card__header">
+              <div>
+                <h3 class="case-card__title">Automação e Governança no ERP Logix (MAN10021)</h3>
+                <p class="case-card__meta">Vantec Indústria de Máquinas · Módulo MAN10021</p>
+              </div>
+              <div class="case-card__tags">
+                <span class="tag tag--accent">ERP Logix</span>
+                <span class="tag">VBA</span>
+                <span class="tag">PowerShell</span>
+                <span class="tag">Governança</span>
+              </div>
+            </header>
+            <div class="case-card__body">
+              <div class="psi-grid">
+                <div class="psi-block psi-block--problem">
+                  <p class="psi-block__label">Desafio</p>
+                  <p class="psi-block__text">O processo de inserção de dados fiscais e operacionais no ERP Logix era feito de forma manual, altamente burocrático e suscetível a erros de digitação, o que gerava retrabalho constante no setor.</p>
+                </div>
+                <div class="psi-block psi-block--solution">
+                  <p class="psi-block__label">Solução</p>
+                  <p class="psi-block__text">Mapeei todo o fluxo de dados de ponta a ponta e desenhei/desenvolvi uma solução de automação focada em eliminar tarefas repetitivas, com validações em camadas integradas ao módulo MAN10021.</p>
+                </div>
+                <div class="psi-block psi-block--impact">
+                  <p class="psi-block__label">Resultados</p>
+                  <p class="psi-block__text">Eliminação total de retrabalhos da equipe. Redução de erros de digitação de dados fiscais a zero. Economia comprovada de 13 a 24 horas mensais de trabalho manual para o setor.</p>
+                </div>
+              </div>
+
+              <div class="process-flow">
+                <p class="process-flow__title">FLUXO DO PROCESSO: ANTES vs. DEPOIS</p>
+                <div class="process-flow__diagram" role="img" aria-label="Diagrama de fluxo: inserção manual substituída por automação com validação em camadas e registro no ERP Logix">
+                  <div class="flow-step">
+                    <div class="flow-step__box">Inserção<br>Manual</div>
+                  </div>
+                  <div class="flow-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                  <div class="flow-step">
+                    <div class="flow-step__box">Conferência<br>Repetitiva</div>
+                  </div>
+                  <div class="flow-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                  <div class="flow-step flow-step--highlight">
+                    <div class="flow-step__box">Automação<br>de Fluxo</div>
+                  </div>
+                  <div class="flow-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                  <div class="flow-step flow-step--highlight">
+                    <div class="flow-step__box">Validação<br>em Camadas</div>
+                  </div>
+                  <div class="flow-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                  <div class="flow-step flow-step--success">
+                    <div class="flow-step__box">Registro<br>ERP Logix</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case 2: NCM -->
+          <article class="case-card">
+            <header class="case-card__header">
+              <div>
+                <h3 class="case-card__title">Padronização de Classificações Fiscais (NCM) e Compliance</h3>
+                <p class="case-card__meta">Vantec Indústria de Máquinas · Matriz Técnica</p>
+              </div>
+              <div class="case-card__tags">
+                <span class="tag tag--accent">NCM</span>
+                <span class="tag">Compliance</span>
+                <span class="tag">Excel</span>
+              </div>
+            </header>
+            <div class="case-card__body">
+              <div class="psi-grid">
+                <div class="psi-block psi-block--problem">
+                  <p class="psi-block__label">Desafio</p>
+                  <p class="psi-block__text">Faltava padronização na base de dados de peças e componentes, gerando riscos de inconformidade tributária e instabilidade nos registros do sistema.</p>
+                </div>
+                <div class="psi-block psi-block--solution">
+                  <p class="psi-block__label">Solução</p>
+                  <p class="psi-block__text">Criei uma matriz técnica rigorosa para análise das propriedades mecânicas de componentes, cruzando essas informações com as tabelas de incidência fiscal e regras de validação automatizadas.</p>
+                </div>
+                <div class="psi-block psi-block--impact">
+                  <p class="psi-block__label">Resultados</p>
+                  <p class="psi-block__text">Segurança jurídica para a empresa, total conformidade tributária para auditorias e estabilidade para a base de dados do sistema, eliminando retrabalho de reclassificação.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- 04 Dashboard -->
+      <section id="dashboard" class="dashboard-section" aria-labelledby="dashboard-title">
+        <div class="section-container reveal">
+          <p class="section-label">04 · Demonstração Visual</p>
+          <h2 id="dashboard-title" class="section-title">Painel analítico: Matriz NCM & Compliance</h2>
+          <p class="section-lead">
+            Demonstração interativa com dados anonimizados do projeto de classificação fiscal. Visualização de cruzamentos entre propriedades mecânicas e conformidade tributária.
+          </p>
+
+          <div class="dashboard-panel">
+            <div class="dashboard-panel__toolbar">
+              <div class="dashboard-panel__toolbar-left">
+                <div class="dashboard-panel__dots" aria-hidden="true">
+                  <span class="dashboard-panel__dot dashboard-panel__dot--red"></span>
+                  <span class="dashboard-panel__dot dashboard-panel__dot--yellow"></span>
+                  <span class="dashboard-panel__dot dashboard-panel__dot--green"></span>
+                </div>
+                <span class="dashboard-panel__title">NCM Compliance Dashboard · v2.1</span>
+              </div>
+              <div class="dashboard-panel__status">
+                <span class="dashboard-panel__status-dot" aria-hidden="true"></span>
+                Dados anonimizados · Atualizado em Jun/2025
+              </div>
+            </div>
+
+            <div class="dashboard-panel__filters" role="tablist" aria-label="Filtros do painel">
+              <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+              <button class="filter-btn" data-filter="conforme" role="tab" aria-selected="false">Conformes</button>
+              <button class="filter-btn" data-filter="revisao" role="tab" aria-selected="false">Em Revisão</button>
+              <button class="filter-btn" data-filter="divergente" role="tab" aria-selected="false">Divergentes</button>
+            </div>
+
+            <div class="dashboard-panel__body">
+              <div class="dashboard-kpi-row" role="list" aria-label="Indicadores do painel">
+                <div class="dashboard-kpi" role="listitem">
+                  <p class="dashboard-kpi__label">Total Componentes</p>
+                  <p class="dashboard-kpi__value" id="kpiTotal">847</p>
+                  <p class="dashboard-kpi__change dashboard-kpi__change--up">↑ 12% vs. trimestre anterior</p>
+                </div>
+                <div class="dashboard-kpi" role="listitem">
+                  <p class="dashboard-kpi__label">Taxa de Conformidade</p>
+                  <p class="dashboard-kpi__value" id="kpiConformidade">94,2%</p>
+                  <p class="dashboard-kpi__change dashboard-kpi__change--up">↑ 8,3pp após matriz</p>
+                </div>
+                <div class="dashboard-kpi" role="listitem">
+                  <p class="dashboard-kpi__label">Em Revisão</p>
+                  <p class="dashboard-kpi__value" id="kpiRevisao">38</p>
+                  <p class="dashboard-kpi__change dashboard-kpi__change--down">↓ 62% vs. baseline</p>
+                </div>
+                <div class="dashboard-kpi" role="listitem">
+                  <p class="dashboard-kpi__label">Divergências Críticas</p>
+                  <p class="dashboard-kpi__value" id="kpiDivergente">11</p>
+                  <p class="dashboard-kpi__change dashboard-kpi__change--down">↓ de 89 para 11</p>
+                </div>
+              </div>
+
+              <div class="dashboard-charts">
+                <div class="chart-card">
+                  <div class="chart-card__header">
+                    <h3 class="chart-card__title">Conformidade por Família de Componentes</h3>
+                    <span class="chart-card__badge">Q2/2025</span>
+                  </div>
+                  <div class="chart-wrapper">
+                    <canvas id="chartConformidade" aria-label="Gráfico de barras de conformidade por família de componentes" role="img"></canvas>
+                  </div>
+                </div>
+                <div class="chart-card">
+                  <div class="chart-card__header">
+                    <h3 class="chart-card__title">Evolução Mensal de Divergências</h3>
+                    <span class="chart-card__badge">6 meses</span>
+                  </div>
+                  <div class="chart-wrapper chart-wrapper--sm">
+                    <canvas id="chartEvolucao" aria-label="Gráfico de linha da evolução mensal de divergências" role="img"></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ncm-matrix">
+                <div class="ncm-matrix__header">
+                  <h3 class="ncm-matrix__title">Matriz Técnica: Amostra de Componentes</h3>
+                  <div class="ncm-matrix__legend" aria-hidden="true">
+                    <span class="ncm-matrix__legend-item"><span class="ncm-matrix__legend-dot" style="background:#2d6a4f"></span> Conforme</span>
+                    <span class="ncm-matrix__legend-item"><span class="ncm-matrix__legend-dot" style="background:#9a6700"></span> Revisão</span>
+                    <span class="ncm-matrix__legend-item"><span class="ncm-matrix__legend-dot" style="background:#7d2e2e"></span> Divergente</span>
+                  </div>
+                </div>
+                <table class="ncm-table" id="ncmTable">
+                  <thead>
+                    <tr>
+                      <th scope="col">Código</th>
+                      <th scope="col">Componente</th>
+                      <th scope="col">Material</th>
+                      <th scope="col">NCM Atribuído</th>
+                      <th scope="col">NCM Esperado</th>
+                      <th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ncmTableBody"></tbody>
+                </table>
+              </div>
+
+              <p class="dashboard-disclaimer">
+                ⚠ Dados completamente anonimizados para fins de demonstração de portfólio. Valores, códigos e nomenclaturas foram alterados e não representam informações reais de clientes ou empresas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- 05 Competências -->
+      <section id="competencias" class="competencies-section" aria-labelledby="competencias-title">
+        <div class="section-container reveal">
+          <p class="section-label">05 · Competências</p>
+          <h2 id="competencias-title" class="section-title">Hard skills & soft skills</h2>
+          <p class="section-lead">
+            Ferramentas técnicas aplicadas com foco em eficiência operacional, combinadas a competências comportamentais orientadas a resultados práticos.
+          </p>
+
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h3 class="skill-group__title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                Programação & Automação
+              </h3>
+              <div class="skill-list">
+                <span class="skill-chip">PowerShell</span>
+                <span class="skill-chip">VBA (Macros)</span>
+                <span class="skill-chip">Excel Intermediário</span>
+                <span class="skill-chip">Automação de Rotinas</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group__title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                Sistemas Corporativos
+              </h3>
+              <div class="skill-list">
+                <span class="skill-chip">ERP Logix (MAN10021)</span>
+                <span class="skill-chip">TeamCenter</span>
+                <span class="skill-chip">Governança de Dados</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group__title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                Engenharia Digital (CAD/BIM)
+              </h3>
+              <div class="skill-list">
+                <span class="skill-chip">Leitura Crítica de Projetos</span>
+                <span class="skill-chip">Solid Edge</span>
+                <span class="skill-chip">SketchUp</span>
+                <span class="skill-chip">Revit</span>
+                <span class="skill-chip">AutoCAD</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group__title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Gestão & Compliance
+              </h3>
+              <div class="skill-list">
+                <span class="skill-chip">Classificação NCM</span>
+                <span class="skill-chip">Análise CAPEX/OPEX</span>
+                <span class="skill-chip">Mitigação de Riscos</span>
+                <span class="skill-chip">Bases de Dados Operacionais</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-grid skills-grid--full">
+            <div class="skill-group">
+              <h3 class="skill-group__title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Soft Skills
+              </h3>
+              <div class="skill-list">
+                <span class="skill-chip">Raciocínio Lógico & Análise Apurada</span>
+                <span class="skill-chip">Paixão por Eficiência</span>
+                <span class="skill-chip">Proatividade</span>
+                <span class="skill-chip">Entrega de Resultados Práticos</span>
+                <span class="skill-chip">Aprendizado Contínuo</span>
+                <span class="skill-chip">Colaboração Multidisciplinar</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="competency-matrix">
+            <div class="competency-matrix__header">
+              <h3 class="competency-matrix__title">Matriz de Valor: Competência × Aplicação</h3>
+              <p class="competency-matrix__subtitle">Como habilidades técnicas se traduzem em impacto operacional na indústria</p>
+            </div>
+            <table class="competency-table">
+              <thead>
+                <tr>
+                  <th scope="col">Competência (Vantec)</th>
+                  <th scope="col">Aplicação Prática</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Validação e viabilidade técnica de projetos complexos</td>
+                  <td>Filtro final que garante que nada chegue ao chão de fábrica sem validação técnica e financeira</td>
+                </tr>
+                <tr>
+                  <td>Interface engenharia · produção · suprimentos</td>
+                  <td>Alinhamento estratégico entre projetos, compras e execução no chão de fábrica</td>
+                </tr>
+                <tr>
+                  <td>Automação Logix/VBA e eliminação de burocracias</td>
+                  <td>Redução de TAT e liberação de capacidade para atividades de maior valor</td>
+                </tr>
+                <tr>
+                  <td>Matriz NCM e compliance fiscal</td>
+                  <td>Segurança jurídica, conformidade tributária e estabilidade da base de dados</td>
+                </tr>
+                <tr>
+                  <td>Leitura crítica de projetos CAD/BIM</td>
+                  <td>Identificação de falhas operacionais, gargalos e peças inviáveis na linha de produção</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- 06 Experiência -->
+      <section id="experiencia" class="experience-section" aria-labelledby="experiencia-title">
+        <div class="section-container reveal">
+          <p class="section-label">06 · Experiência Profissional</p>
+          <h2 id="experiencia-title" class="section-title">Atuação na Vantec Indústria de Máquinas</h2>
+          <p class="section-lead">
+            Desde agosto de 2022, atuo como Analista de Processos Júnior conectando engenharia, produção e suprimentos na manufatura de equipamentos industriais.
+          </p>
+
+          <div class="timeline">
+            <article class="timeline-item">
+              <p class="timeline-item__period">Ago 2022 a Atual</p>
+              <h3 class="timeline-item__title">Analista de Processos Júnior</h3>
+              <p class="timeline-item__company">Vantec Indústria de Máquinas LTDA · Xanxerê, SC</p>
+              <ul class="timeline-item__desc">
+                <li><strong>Validação e viabilidade técnica:</strong> leitura crítica e interpretação avançada de projetos complexos para identificar falhas operacionais, prever gargalos e apontar peças ou estruturas inviáveis na linha de produção, garantindo que nada chegue ao chão de fábrica sem validação técnica e financeira</li>
+                <li><strong>Interface estratégica:</strong> conexão entre as áreas de engenharia (projetos), produção (chão de fábrica) e suprimentos (compras e logística)</li>
+                <li><strong>Eficiência fiscal e compliance:</strong> estruturação de dados fiscais e padronização rigorosa de códigos NCM, garantindo conformidade tributária e operacional</li>
+                <li><strong>Melhoria contínua:</strong> mapeamento prático de fluxos AS-IS para encontrar redundâncias e propor novos fluxos que economizam tempo e recursos, incluindo automação no ERP Logix e TeamCenter</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- 07 Formação -->
+      <section id="formacao" class="education-section" aria-labelledby="formacao-title">
+        <div class="section-container reveal">
+          <p class="section-label">07 · Formação Acadêmica</p>
+          <h2 id="formacao-title" class="section-title">Base técnica sólida</h2>
+          <p class="section-lead">
+            Formação que combina engenharia civil, qualificação industrial técnica e capacitação administrativa.
+          </p>
+
+          <div class="edu-grid">
+            <article class="edu-card">
+              <p class="edu-card__status">Em andamento · 4º período</p>
+              <h3 class="edu-card__title">Engenharia Civil (Bacharelado)</h3>
+              <p class="edu-card__institution">Unoesc · Xanxerê, SC</p>
+            </article>
+            <article class="edu-card">
+              <p class="edu-card__status">Concluído · Dez/2019 · 800h</p>
+              <h3 class="edu-card__title">Aprendizagem Industrial: Desenhista Mecânico</h3>
+              <p class="edu-card__institution">SENAI · Xanxerê, SC</p>
+            </article>
+            <article class="edu-card">
+              <p class="edu-card__status">Concluído · Dez/2022 · 96h</p>
+              <h3 class="edu-card__title">Assistente Administrativo</h3>
+              <p class="edu-card__institution">Instituto Mix</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- 08 Contato -->
+      <section id="contato" class="contact-section" aria-labelledby="contato-title">
+        <div class="section-container reveal">
+          <p class="section-label">08 · Contato</p>
+          <h2 id="contato-title" class="section-title">Vamos conversar sobre processos</h2>
+          <p class="section-lead">
+            Aberta a oportunidades em engenharia de processos, automação operacional e melhoria contínua na indústria.
+          </p>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <h3 class="contact-card__title">Pronta para contribuir</h3>
+              <p class="contact-card__text">
+                Se você busca alguém que entende o chão de fábrica, valida projetos com rigor técnico e transforma burocracias em processos automatizados, vamos conversar.
+              </p>
+              <div class="contact-links">
+                <a href="mailto:eduardadossantos015@gmail.com" class="contact-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  eduardadossantos015@gmail.com
+                </a>
+                <a href="tel:+5549998255869" class="contact-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  (49) 99825-5869
+                </a>
+                <span class="contact-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Xanxerê, Santa Catarina
+                </span>
+              </div>
+            </div>
+
+            <div class="contact-info-list">
+              <div class="contact-info-item">
+                <h4>Áreas de interesse</h4>
+                <p>Engenharia de Processos · Automação Operacional · BPM · Melhoria Contínua · Governança de Dados · Compliance Fiscal</p>
+              </div>
+              <div class="contact-info-item">
+                <h4>Setor de experiência</h4>
+                <p>Manufatura Industrial · Indústria de Máquinas · Equipamentos Pesados</p>
+              </div>
+              <div class="contact-info-item">
+                <h4>Disponibilidade</h4>
+                <p>Imediata para oportunidades em Santa Catarina e remoto/híbrido para posições compatíveis.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>&copy; 2025 <span>Eduarda Cristina dos Santos</span> · Portfólio Profissional · DOC-2025-ECS-002</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+</body>
+</html>
