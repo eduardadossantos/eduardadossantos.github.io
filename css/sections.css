@@ -181,6 +181,14 @@
   background: var(--color-bg-muted);
 }
 
+.cases-section__intro {
+  margin-bottom: var(--space-2xl);
+}
+
+.cases-section__intro .case-filters {
+  margin-bottom: 0;
+}
+
 .case-filters {
   display: flex;
   flex-wrap: wrap;

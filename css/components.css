@@ -198,27 +198,13 @@
   opacity: 1;
 }
 
-  @media (max-width: 960px) {
+@media (max-width: 960px) {
   .sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: min(var(--sidebar-width), 85vw);
-    transform: translateX(-100%);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .sidebar.is-open {
-    transform: translateX(0);
+    display: none;
   }
 
   .sidebar-overlay {
-    display: block;
-    pointer-events: none;
-  }
-
-  .sidebar-overlay.is-visible {
-    pointer-events: auto;
+    display: none !important;
   }
 }
 

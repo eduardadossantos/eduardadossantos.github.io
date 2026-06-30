@@ -47,13 +47,6 @@
         <svg class="theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
-      <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="sidebar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
-      </button>
     </div>
   </header>
 
@@ -230,19 +223,21 @@
 
       <!-- 03 Estudos de Caso -->
       <section id="casos" class="cases-section" aria-labelledby="casos-title">
-        <div class="section-container reveal">
-          <p class="section-label">03 · Estudos de Caso</p>
-          <h2 id="casos-title" class="section-title">Vitrine de soluções com impacto real na Vantec</h2>
-          <p class="section-lead">
-            Cada projeto documenta o desafio, a solução implementada e os resultados mensuráveis. Use os filtros para navegar por custos, processos, qualidade ou ferramentas operacionais.
-          </p>
+        <div class="section-container">
+          <div class="cases-section__intro reveal">
+            <p class="section-label">03 · Estudos de Caso</p>
+            <h2 id="casos-title" class="section-title">Vitrine de soluções com impacto real na Vantec</h2>
+            <p class="section-lead">
+              Cada projeto documenta o desafio, a solução implementada e os resultados mensuráveis. Use os filtros para navegar por custos, processos, qualidade ou ferramentas operacionais.
+            </p>
 
-          <div class="case-filters" role="tablist" aria-label="Filtrar estudos de caso">
-            <button class="case-filter is-active" data-case-filter="all" role="tab" aria-selected="true">Todos</button>
-            <button class="case-filter" data-case-filter="custos" role="tab" aria-selected="false">Custos</button>
-            <button class="case-filter" data-case-filter="processos" role="tab" aria-selected="false">Processos</button>
-            <button class="case-filter" data-case-filter="qualidade" role="tab" aria-selected="false">Qualidade</button>
-            <button class="case-filter" data-case-filter="ferramentas" role="tab" aria-selected="false">Ferramentas</button>
+            <div class="case-filters" role="tablist" aria-label="Filtrar estudos de caso">
+              <button class="case-filter is-active" data-case-filter="all" role="tab" aria-selected="true">Todos</button>
+              <button class="case-filter" data-case-filter="custos" role="tab" aria-selected="false">Custos</button>
+              <button class="case-filter" data-case-filter="processos" role="tab" aria-selected="false">Processos</button>
+              <button class="case-filter" data-case-filter="qualidade" role="tab" aria-selected="false">Qualidade</button>
+              <button class="case-filter" data-case-filter="ferramentas" role="tab" aria-selected="false">Ferramentas</button>
+            </div>
           </div>
 
           <p id="casesEmpty" class="cases-empty">Nenhum projeto nesta categoria.</p>
@@ -1097,10 +1092,10 @@
         </a>
       </li>
       <li class="mobile-nav__item">
-        <button type="button" class="mobile-nav__btn" id="mobileNavMenu" aria-label="Abrir menu completo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          Menu
-        </button>
+        <a href="#contato" class="mobile-nav__link" data-section="contato">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Contato
+        </a>
       </li>
     </ul>
   </nav>
