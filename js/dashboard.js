@@ -39,6 +39,21 @@
   var chartConformidade = null;
   var chartEvolucao = null;
 
+  function cssVar(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  function destroyCharts() {
+    if (chartConformidade) {
+      chartConformidade.destroy();
+      chartConformidade = null;
+    }
+    if (chartEvolucao) {
+      chartEvolucao.destroy();
+      chartEvolucao = null;
+    }
+  }
+
   /* ── Render NCM table ── */
   function renderTable(filter) {
     var tbody = document.getElementById('ncmTableBody');
@@ -111,15 +126,20 @@
   function initCharts() {
     if (typeof Chart === 'undefined') return;
 
-    var accentColor = '#1a3d5c';
-    var accentLight = '#e8eef3';
-    var successColor = '#2d6a4f';
-    var warningColor = '#9a6700';
-    var problemColor = '#7d2e2e';
+    destroyCharts();
+
+    var accentColor = cssVar('--color-accent') || '#1a3d5c';
+    var accentLight = cssVar('--color-accent-light') || '#e8eef3';
+    var successColor = cssVar('--color-success') || '#2d6a4f';
+    var warningColor = cssVar('--color-warning') || '#9a6700';
+    var problemColor = cssVar('--color-problem') || '#7d2e2e';
+    var textMuted = cssVar('--color-text-muted') || '#5c6670';
+    var borderColor = cssVar('--color-border') || '#dde2e8';
+    var gridColor = cssVar('--color-bg-muted') || '#eef1f4';
 
     Chart.defaults.font.family = "'IBM Plex Mono', monospace";
     Chart.defaults.font.size = 11;
-    Chart.defaults.color = '#5c6670';
+    Chart.defaults.color = textMuted;
 
     /* Bar chart — conformidade por família */
     var ctxBar = document.getElementById('chartConformidade');
@@ -165,13 +185,13 @@
             x: {
               stacked: true,
               grid: { display: false },
-              border: { color: '#dde2e8' }
+              border: { color: borderColor }
             },
             y: {
               stacked: true,
               beginAtZero: true,
-              grid: { color: '#eef1f4' },
-              border: { color: '#dde2e8' }
+              grid: { color: gridColor },
+              border: { color: borderColor }
             }
           }
         }
@@ -209,12 +229,12 @@
           scales: {
             x: {
               grid: { display: false },
-              border: { color: '#dde2e8' }
+              border: { color: borderColor }
             },
             y: {
               beginAtZero: true,
-              grid: { color: '#eef1f4' },
-              border: { color: '#dde2e8' }
+              grid: { color: gridColor },
+              border: { color: borderColor }
             }
           }
         }
@@ -234,4 +254,8 @@
   } else {
     init();
   }
+
+  window.addEventListener('themechange', function () {
+    setTimeout(initCharts, 50);
+  });
 })();

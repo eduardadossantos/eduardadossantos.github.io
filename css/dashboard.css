@@ -12,8 +12,8 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--space-md) var(--space-lg);
-  background: #1e2936;
-  color: #cbd5e1;
+  background: var(--color-dashboard-toolbar);
+  color: var(--color-dashboard-toolbar-text);
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   gap: var(--space-md);
@@ -42,7 +42,7 @@
 .dashboard-panel__dot--green { background: #22c55e; }
 
 .dashboard-panel__title {
-  color: #e2e8f0;
+  color: var(--color-dashboard-title);
   font-weight: 500;
 }
 
@@ -50,7 +50,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  color: #94a3b8;
+  color: var(--color-dashboard-muted);
 }
 
 .dashboard-panel__status-dot {
@@ -87,7 +87,7 @@
 
 .filter-btn.is-active {
   background: var(--color-accent);
-  color: #fff;
+  color: var(--color-on-accent);
   border-color: var(--color-accent);
 }
 
@@ -228,7 +228,7 @@
 
 .ncm-table th {
   background: var(--color-accent);
-  color: #fff;
+  color: var(--color-on-accent);
   padding: var(--space-sm) var(--space-md);
   text-align: left;
   font-weight: 500;

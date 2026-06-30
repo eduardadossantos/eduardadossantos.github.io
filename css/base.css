@@ -11,6 +11,13 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-height) + var(--space-sm));
+}
+
+@media (min-width: 961px) {
+  html {
+    scroll-padding-top: var(--space-md);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -27,6 +34,17 @@ body {
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: var(--transition-theme);
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--header-height) + var(--space-sm));
+}
+
+@media (min-width: 961px) {
+  section[id] {
+    scroll-margin-top: var(--space-md);
+  }
 }
 
 img,
@@ -173,10 +191,12 @@ button {
   z-index: 100;
   height: var(--header-height);
   padding: 0 var(--space-md);
+  padding-top: env(safe-area-inset-top, 0px);
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
   align-items: center;
   justify-content: space-between;
+  transition: var(--transition-theme);
 }
 
 .mobile-header__brand {
@@ -193,6 +213,7 @@ button {
   justify-content: center;
   border-radius: var(--radius-sm);
   color: var(--color-text);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .menu-toggle:hover {

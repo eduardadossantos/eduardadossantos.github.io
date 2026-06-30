@@ -2,11 +2,24 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Portfólio de Eduarda Cristina dos Santos, Analista de Processos na indústria de máquinas. Automação, compliance fiscal e engenharia de processos.">
   <meta name="author" content="Eduarda Cristina dos Santos">
-  <meta name="theme-color" content="#1a3d5c">
+  <meta id="metaThemeColor" name="theme-color" content="#1a3d5c">
   <title>Eduarda Cristina dos Santos | Analista de Processos & Automação</title>
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('portfolio-theme-v2');
+        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          var m = document.getElementById('metaThemeColor');
+          if (m) m.setAttribute('content', '#0d1117');
+        }
+      } catch (e) {}
+    })();
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +30,7 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/navigation.css">
 </head>
 <body>
 
@@ -24,13 +38,19 @@
 
   <header class="mobile-header" aria-label="Navegação mobile">
     <span class="mobile-header__brand">ECS · Processos</span>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="sidebar">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <line x1="3" y1="12" x2="21" y2="12"/>
-        <line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-    </button>
+    <div class="mobile-header__actions">
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Alternar modo escuro">
+        <svg class="theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
   </header>
 
   <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
@@ -40,13 +60,25 @@
     <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
       <div class="sidebar__brand">
         <div class="sidebar__logo">
-          <div class="sidebar__logo-icon" aria-hidden="true">EC</div>
+          <button type="button" class="sidebar__avatar-btn" id="avatarTrigger" aria-label="Ampliar foto de Eduarda Cristina dos Santos">
+            <img
+              class="sidebar__avatar"
+              src="assets/img/eu.jpeg"
+              alt=""
+              width="40"
+              height="40"
+              loading="eager"
+              decoding="async"
+            >
+            <span class="sidebar__avatar-hint" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </span>
+          </button>
           <div>
             <div class="sidebar__name">Eduarda Cristina<br>dos Santos</div>
           </div>
         </div>
         <p class="sidebar__role">Analista de Processos · Indústria</p>
-        <p class="sidebar__doc-id">DOC-2025-ECS-002</p>
       </div>
 
       <nav class="sidebar__nav" aria-label="Seções do portfólio">
@@ -63,6 +95,13 @@
       </nav>
 
       <div class="sidebar__footer">
+        <div class="sidebar__theme">
+          <button type="button" class="theme-toggle" data-theme-toggle aria-label="Alternar modo escuro">
+            <svg class="theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <span class="theme-toggle__label">Modo escuro</span>
+          </button>
+        </div>
         <div class="sidebar__contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span>Xanxerê, SC</span>
@@ -93,7 +132,7 @@
           </h1>
 
           <p class="hero__tagline">
-            Automação, governança de dados e validação técnica, unindo Engenharia Civil (4º período) à atuação prática na indústria de máquinas, conectando engenharia, produção e suprimentos.
+            Viabilidade técnica, redução de custos e Kaizen na prática. Uno Engenharia Civil (4º período) à atuação na indústria de máquinas, conectando engenharia, produção e suprimentos com foco em CAPEX, OPEX e custo total.
           </p>
 
           <div class="hero__actions">
@@ -106,16 +145,16 @@
 
           <div class="hero__metrics" role="list" aria-label="Indicadores de impacto">
             <div class="hero__metric" role="listitem">
-              <div class="hero__metric-value">13 a 24h</div>
-              <div class="hero__metric-label">Economia mensal de trabalho manual com automação ERP</div>
+              <div class="hero__metric-value">R$ 34,9 mil</div>
+              <div class="hero__metric-label">Economia em matéria-prima na otimização de geometria (4 peças)</div>
             </div>
             <div class="hero__metric" role="listitem">
-              <div class="hero__metric-value">0</div>
-              <div class="hero__metric-label">Erros de digitação em dados fiscais primários</div>
+              <div class="hero__metric-value">80,85%</div>
+              <div class="hero__metric-label">Redução no custo de chapa de aço 1045</div>
             </div>
             <div class="hero__metric" role="listitem">
-              <div class="hero__metric-value">100%</div>
-              <div class="hero__metric-label">Foco em impacto gerado na manufatura industrial</div>
+              <div class="hero__metric-value">22h</div>
+              <div class="hero__metric-label">Liberadas na caldeiraria por lote (make-or-buy helicoides)</div>
             </div>
           </div>
         </div>
@@ -139,7 +178,10 @@
                 Mais do que analisar processos, tenho uma paixão genuína por eliminar burocracias e reduzir o tempo gasto em tarefas repetitivas. Minha motivação vem de construir soluções, seja via VBA, PowerShell ou macros, que cortam erros humanos pela raiz e permitem que a equipe foque no que realmente traz valor.
               </p>
               <p>
-                Gosto de entregar resultados práticos, sou proativa e foco sempre na redução de custos, no ganho de eficiência e na conformidade das operações operacionais e financeiras.
+                Gosto de entregar resultados práticos, sou proativa e aplico Kaizen no dia a dia: identifico erros, proponho soluções e foco na redução de custos, no ganho de eficiência e na conformidade operacional e financeira. Minha análise considera o custo total do projeto, não apenas o preço de aquisição isolado.
+              </p>
+              <p>
+                Sou especialista em achar erros e resolvê-los. Seja revisando um desenho técnico, automatizando uma rotina no ERP ou estruturando um POP de qualidade, parto sempre do problema real no chão de fábrica.
               </p>
             </div>
 
@@ -152,7 +194,7 @@
                 </li>
                 <li>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                  Automação e governança no ERP Logix (MAN10021)
+                  Automação e governança no ERP · módulo MOD-CF
                 </li>
                 <li>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -160,11 +202,19 @@
                 </li>
                 <li>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                  Mapeamento AS-IS e redesenho de fluxos operacionais
+                  Análise make-or-buy e viabilidade financeira (CAPEX/OPEX)
                 </li>
                 <li>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                  Automação ativa em VBA e PowerShell para eliminar retrabalho
+                  Implantação de SGQ com 5 POPs no TeamCenter
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  DFM: usinagens, tolerâncias e otimização de geometria
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Kaizen e melhoria contínua aplicada na manufatura
                 </li>
               </ul>
             </aside>
@@ -180,15 +230,27 @@
           <p class="section-label">03 · Estudos de Caso</p>
           <h2 id="casos-title" class="section-title">Vitrine de soluções com impacto real na Vantec</h2>
           <p class="section-lead">
-            Cada projeto documenta o desafio, a solução implementada e os resultados mensuráveis. Metodologia: mapeamento AS-IS → desenho TO-BE → implementação → governança.
+            Cada projeto documenta o desafio, a solução implementada e os resultados mensuráveis. Use os filtros para navegar por custos, processos, qualidade ou ferramentas operacionais.
           </p>
 
-          <!-- Case 1: Automação ERP -->
-          <article class="case-card">
+          <div class="case-filters" role="tablist" aria-label="Filtrar estudos de caso">
+            <button class="case-filter is-active" data-case-filter="all" role="tab" aria-selected="true">Todos</button>
+            <button class="case-filter" data-case-filter="custos" role="tab" aria-selected="false">Custos</button>
+            <button class="case-filter" data-case-filter="processos" role="tab" aria-selected="false">Processos</button>
+            <button class="case-filter" data-case-filter="qualidade" role="tab" aria-selected="false">Qualidade</button>
+            <button class="case-filter" data-case-filter="ferramentas" role="tab" aria-selected="false">Ferramentas</button>
+          </div>
+
+          <p id="casesEmpty" class="cases-empty">Nenhum projeto nesta categoria.</p>
+
+          <div id="casesList" class="cases-list">
+
+          <!-- Case: Automação ERP -->
+          <article class="case-card" data-category="processos">
             <header class="case-card__header">
               <div>
-                <h3 class="case-card__title">Automação e Governança no ERP Logix (MAN10021)</h3>
-                <p class="case-card__meta">Vantec Indústria de Máquinas · Módulo MAN10021</p>
+                <h3 class="case-card__title">Automação e Governança no ERP · Módulo MOD-CF</h3>
+                <p class="case-card__meta">Vantec Indústria de Máquinas · Módulo MOD-CF · Cadastro fiscal</p>
               </div>
               <div class="case-card__tags">
                 <span class="tag tag--accent">ERP Logix</span>
@@ -205,7 +267,7 @@
                 </div>
                 <div class="psi-block psi-block--solution">
                   <p class="psi-block__label">Solução</p>
-                  <p class="psi-block__text">Mapeei todo o fluxo de dados de ponta a ponta e desenhei/desenvolvi uma solução de automação focada em eliminar tarefas repetitivas, com validações em camadas integradas ao módulo MAN10021.</p>
+                  <p class="psi-block__text">Mapeei todo o fluxo de dados de ponta a ponta e desenhei/desenvolvi uma solução de automação focada em eliminar tarefas repetitivas, com validações em camadas integradas ao módulo de cadastro fiscal (MOD-CF).</p>
                 </div>
                 <div class="psi-block psi-block--impact">
                   <p class="psi-block__label">Resultados</p>
@@ -248,8 +310,8 @@
             </div>
           </article>
 
-          <!-- Case 2: NCM -->
-          <article class="case-card">
+          <!-- Case: NCM -->
+          <article class="case-card" data-category="processos">
             <header class="case-card__header">
               <div>
                 <h3 class="case-card__title">Padronização de Classificações Fiscais (NCM) e Compliance</h3>
@@ -278,6 +340,365 @@
               </div>
             </div>
           </article>
+
+          <!-- Case: Geometria e Custos -->
+          <article class="case-card" data-category="custos">
+            <header class="case-card__header">
+              <div>
+                <h3 class="case-card__title">Otimização de Geometria e Redução de Custos</h3>
+                <p class="case-card__meta">Vantec · Chapas de aço 1045 · Peças curvas</p>
+              </div>
+              <div class="case-card__tags">
+                <span class="tag tag--accent">DFM</span>
+                <span class="tag">CAPEX</span>
+                <span class="tag">Geometria</span>
+              </div>
+            </header>
+            <div class="case-card__body">
+              <div class="psi-grid">
+                <div class="psi-block psi-block--problem">
+                  <p class="psi-block__label">Desafio</p>
+                  <p class="psi-block__text">O método de aquisição de chapas de aço 1045 para peças curvas gerava 92% de desperdício de material, pois o fornecedor cobrava pelo retângulo envolvente da peça, não pelo contorno real de corte.</p>
+                </div>
+                <div class="psi-block psi-block--solution">
+                  <p class="psi-block__label">Solução</p>
+                  <p class="psi-block__text">Redesenhei o projeto mecânico, dividindo a peça única em duas menores e soldadas. A nova geometria otimizou o aproveitamento da chapa e reduziu a área total de compra sem comprometer a função estrutural.</p>
+                </div>
+                <div class="psi-block psi-block--impact">
+                  <p class="psi-block__label">Resultados</p>
+                  <p class="psi-block__text">Redução drástica de 80,85% no custo da matéria-prima. Economia de R$ 34.940,76 na fabricação de apenas 4 peças. Evitou R$ 38.549,84 em capital imobilizado em sobras de estoque sem giro rápido.</p>
+                </div>
+              </div>
+              <div class="case-card__metrics">
+                <div class="case-metric"><span class="case-metric__value">80,85%</span><span class="case-metric__label">Redução no custo de MP</span></div>
+                <div class="case-metric"><span class="case-metric__value">R$ 34,9 mil</span><span class="case-metric__label">Economia em 4 peças</span></div>
+                <div class="case-metric"><span class="case-metric__value">92%</span><span class="case-metric__label">Desperdício eliminado</span></div>
+                <div class="case-metric"><span class="case-metric__value">R$ 38,5 mil</span><span class="case-metric__label">Capital imobilizado evitado</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case: Make-or-Buy Helicoides -->
+          <article class="case-card" data-category="custos">
+            <header class="case-card__header">
+              <div>
+                <h3 class="case-card__title">Análise Make-or-Buy: Helicoides e Caldeiraria</h3>
+                <p class="case-card__meta">Vantec · Custo de oportunidade · Caldeiraria</p>
+              </div>
+              <div class="case-card__tags">
+                <span class="tag tag--accent">Make-or-Buy</span>
+                <span class="tag">Caldeiraria</span>
+                <span class="tag">Viabilidade</span>
+              </div>
+            </header>
+            <div class="case-card__body">
+              <div class="psi-grid">
+                <div class="psi-block psi-block--problem">
+                  <p class="psi-block__label">Desafio</p>
+                  <p class="psi-block__text">A fabricação interna de helicoides gerava peças deformadas, exigindo retrabalho manual intenso e consumindo 24 horas do setor de caldeiraria por lote, criando um gargalo crítico na fábrica.</p>
+                </div>
+                <div class="psi-block psi-block--solution">
+                  <p class="psi-block__label">Solução</p>
+                  <p class="psi-block__text">Executei análise de custo de oportunidade comparando fabricação interna versus terceirização de peças já conformadas. Justifiquei que o acréscimo de R$ 1.565,04 na aquisição seria superado pela eliminação do desperdício de horas fabris.</p>
+                </div>
+                <div class="psi-block psi-block--impact">
+                  <p class="psi-block__label">Resultados</p>
+                  <p class="psi-block__text">Caldeiraria reduziu de 24h para 2h (91,66% de liberação). Custo de mão de obra caiu de R$ 2.807,52 para R$ 233,96. Economia líquida de 29,06% no custo total do lote (R$ 1.008,52). Zero retrabalho por distorções geométricas. Próxima etapa sugerida: cotação internacional (China).</p>
+                </div>
+              </div>
+              <div class="case-card__metrics">
+                <div class="case-metric"><span class="case-metric__value">24h → 2h</span><span class="case-metric__label">Tempo de caldeiraria</span></div>
+                <div class="case-metric"><span class="case-metric__value">29,06%</span><span class="case-metric__label">Economia total do lote</span></div>
+                <div class="case-metric"><span class="case-metric__value">R$ 1.008</span><span class="case-metric__label">Economia por lote</span></div>
+                <div class="case-metric"><span class="case-metric__value">0</span><span class="case-metric__label">Retrabalho geométrico</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case: DFM -->
+          <article class="case-card" data-category="custos">
+            <header class="case-card__header">
+              <div>
+                <h3 class="case-card__title">DFM: Usinagens e Tolerâncias Desnecessárias</h3>
+                <p class="case-card__meta">Vantec · Estudos contínuos em projetos</p>
+              </div>
+              <div class="case-card__tags">
+                <span class="tag tag--accent">DFM</span>
+                <span class="tag">Kaizen</span>
+                <span class="tag">Projetos</span>
+              </div>
+            </header>
+            <div class="case-card__body">
+              <div class="psi-grid">
+                <div class="psi-block psi-block--problem">
+                  <p class="psi-block__label">Desafio</p>
+                  <p class="psi-block__text">Projetos chegavam ao chão de fábrica com usinagens e tolerâncias mais rigorosas do que o processo exigia, elevando custo de matéria-prima, mão de obra e tempo de operação sem ganho funcional.</p>
+                </div>
+                <div class="psi-block psi-block--solution">
+                  <p class="psi-block__label">Solução</p>
+                  <p class="psi-block__text">Realizo estudos recorrentes nos projetos para identificar e retirar usinagens supérfluas e tolerâncias desnecessárias, sempre validando a viabilidade técnica antes de liberar para produção.</p>
+                </div>
+                <div class="psi-block psi-block--impact">
+                  <p class="psi-block__label">Resultados</p>
+                  <p class="psi-block__text">Redução contínua de custo de manufatura, mão de obra e tempo de ciclo por peça, com projetos mais adequados à capacidade real da linha de produção.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case: Proteções plásticas -->
+          <article class="case-card" data-category="custos">
+            <header class="case-card__header">
+              <div>
+                <h3 class="case-card__title">Proteções com Moldes Plásticos</h3>
+                <p class="case-card__meta">Vantec · Viabilidade de materiais · Máquinas</p>
+              </div>
+              <div class="case-card__tags">
+                <span class="tag tag--accent">Viabilidade</span>
+                <span class="tag">Moldes</span>
+                <span class="tag">Recorrente</span>
+              </div>
+            </header>
+            <div class="case-card__body">
+              <div class="psi-grid">
+                <div class="psi-block psi-block--problem">
+                  <p class="psi-block__label">Desafio</p>
+                  <p class="psi-block__text">Proteções metálicas em equipamentos elevavam o custo de cada máquina. Como a maioria dos equipamentos leva proteção, pequenas economias unitárias se multiplicam em impacto significativo ao longo do tempo.</p>
+                </div>
+                <div class="psi-block psi-block--solution">
+                  <p class="psi-block__label">Solução</p>
+                  <p class="psi-block__text">Desenvolvi estudo de viabilidade para substituir proteções metálicas por soluções em plástico via moldes, analisando custo, durabilidade e adequação ao ambiente industrial.</p>
+                </div>
+                <div class="psi-block psi-block--impact">
+                  <p class="psi-block__label">Resultados</p>
+                  <p class="psi-block__text">Retorno de valor mensal recorrente por máquina produzida, com redução sustentável no custo de proteções aplicadas à linha de equipamentos.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case: SGQ -->
+          <article class="case-card" data-category="qualidade">
+            <header class="case-card__header">
+              <div>
+                <h3 class="case-card__title">Implantação de SGQ na Engenharia</h3>
+                <p class="case-card__meta">Vantec · 5 POPs · TeamCenter</p>
+              </div>
+              <div class="case-card__tags">
+                <span class="tag tag--accent">SGQ</span>
+                <span class="tag">POPs</span>
+                <span class="tag">TeamCenter</span>
+              </div>
+            </header>
+            <div class="case-card__body">
+              <div class="psi-grid">
+                <div class="psi-block psi-block--problem">
+                  <p class="psi-block__label">Desafio</p>
+                  <p class="psi-block__text">Informações descentralizadas, falta de padronização em desenhos técnicos (soldas e detalhamentos ausentes) e processos desalinhados causavam atrasos severos, com projetos parados por semanas aguardando matérias-primas não cadastradas.</p>
+                </div>
+                <div class="psi-block psi-block--solution">
+                  <p class="psi-block__label">Solução</p>
+                  <p class="psi-block__text">Estruturei o alicerce de qualidade do setor com 5 POPs essenciais: padrão de qualidade em projetos (estrutura de desenhos, soldas, nomenclaturas no TeamCenter) e fluxo de informação com status de bandeira verde e quadriculada para evitar projetos desatualizados na fábrica.</p>
+                </div>
+                <div class="psi-block psi-block--impact">
+                  <p class="psi-block__label">Resultados</p>
+                  <p class="psi-block__text">Aumento imediato na assertividade das ordens de produção e roteiros de fabricação. Eliminação de retrabalhos por falhas de interpretação entre Engenharia e Cadastro/PCP.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case: Registro de Operações -->
+          <article class="case-card" data-category="ferramentas">
+            <header class="case-card__header">
+              <div>
+                <h3 class="case-card__title">Catálogo de Operações de Fabricação</h3>
+                <p class="case-card__meta">Vantec · catalogo-operacoes-fabrica.xlsx</p>
+              </div>
+              <div class="case-card__tags">
+                <span class="tag tag--accent">Excel</span>
+                <span class="tag">Operações</span>
+                <span class="tag">Padronização</span>
+              </div>
+            </header>
+            <div class="case-card__body">
+              <div class="psi-grid">
+                <div class="psi-block psi-block--problem">
+                  <p class="psi-block__label">Desafio</p>
+                  <p class="psi-block__text">Diversos setores precisavam consultar operações de fabricação, mas não havia uma listagem centralizada e padronizada, gerando consultas repetidas e informações inconsistentes entre áreas.</p>
+                </div>
+                <div class="psi-block psi-block--solution">
+                  <p class="psi-block__label">Solução</p>
+                  <p class="psi-block__text">Desenvolvi o catálogo de operações de fabricação, consolidando todas as rotinas em planilha estruturada para facilitar a consulta de engenharia, produção, PCP e suprimentos.</p>
+                </div>
+                <div class="psi-block psi-block--impact">
+                  <p class="psi-block__label">Resultados</p>
+                  <p class="psi-block__text">Fonte única de consulta operacional entre setores, reduzindo tempo de busca e alinhando a linguagem de processos na fábrica.</p>
+                </div>
+              </div>
+              <div class="planilha-preview">
+                <div class="planilha-preview__header">
+                  <span>catalogo-operacoes-fabrica.xlsx</span>
+                  <span class="planilha-preview__badge">Preview</span>
+                </div>
+                <div class="planilha-preview__table-wrap">
+                  <table>
+                    <thead><tr><th>Cód. Op.</th><th>Operação</th><th>Setor</th><th>Máquina</th><th>Tempo Ref.</th></tr></thead>
+                    <tbody>
+                      <tr><td>OP-010</td><td>Corte laser</td><td>Corte</td><td>Equip. L-01</td><td>12 min</td></tr>
+                      <tr><td>OP-022</td><td>Dobra 90°</td><td>Conformação</td><td>Equip. D-02</td><td>8 min</td></tr>
+                      <tr><td>OP-035</td><td>Calandra</td><td>Conformação</td><td>Equip. C-01</td><td>15 min</td></tr>
+                      <tr><td>OP-048</td><td>Solda MIG</td><td>Caldeiraria</td><td>Posto S-03</td><td>45 min</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case: Tabela Máquinas -->
+          <article class="case-card" data-category="ferramentas">
+            <header class="case-card__header">
+              <div>
+                <h3 class="case-card__title">Matriz de Capacidade · Laser / Calandra / Dobradeira</h3>
+                <p class="case-card__meta">Vantec · matriz-capacidade-maquinas.xlsx</p>
+              </div>
+              <div class="case-card__tags">
+                <span class="tag tag--accent">Excel</span>
+                <span class="tag">Corpos de Prova</span>
+                <span class="tag">Máquinas</span>
+              </div>
+            </header>
+            <div class="case-card__body">
+              <div class="psi-grid">
+                <div class="psi-block psi-block--problem">
+                  <p class="psi-block__label">Desafio</p>
+                  <p class="psi-block__text">Faltava clareza sobre quais peças e materiais cada máquina (laser, calandra, dobradeira) poderia processar com qualidade, o que gerava alocação incorreta e retrabalho no chão de fábrica.</p>
+                </div>
+                <div class="psi-block psi-block--solution">
+                  <p class="psi-block__label">Solução</p>
+                  <p class="psi-block__text">Conduzi estudo com corpos de prova e montei tabela cruzando tipo de peça, material e máquina indicada, documentando limites e parâmetros validados em teste.</p>
+                </div>
+                <div class="psi-block psi-block--impact">
+                  <p class="psi-block__label">Resultados</p>
+                  <p class="psi-block__text">Alocação correta de peças às máquinas certas, maior confiabilidade no processo e base técnica para roteiros de fabricação mais assertivos.</p>
+                </div>
+              </div>
+              <div class="planilha-preview">
+                <div class="planilha-preview__header">
+                  <span>matriz-capacidade-maquinas.xlsx</span>
+                  <span class="planilha-preview__badge">Preview</span>
+                </div>
+                <div class="planilha-preview__table-wrap">
+                  <table>
+                    <thead><tr><th>Peça</th><th>Material</th><th>Esp. (mm)</th><th>Laser</th><th>Calandra</th><th>Dobradeira</th></tr></thead>
+                    <tbody>
+                      <tr><td>Chapa curva A</td><td>SAE 1045</td><td>6</td><td>Sim</td><td>Sim</td><td>Não</td></tr>
+                      <tr><td>Perfil L</td><td>ASTM A36</td><td>4</td><td>Sim</td><td>Não</td><td>Sim</td></tr>
+                      <tr><td>Tampa proteção</td><td>Galvanizado</td><td>2</td><td>Sim</td><td>Não</td><td>Sim</td></tr>
+                      <tr><td>Cilindro chapa</td><td>SAE 1020</td><td>8</td><td>Sim</td><td>Sim</td><td>Não</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case: Conversor MP -->
+          <article class="case-card" data-category="ferramentas">
+            <header class="case-card__header">
+              <div>
+                <h3 class="case-card__title">Controle de Matéria-Prima · Conversor de Estoque</h3>
+                <p class="case-card__meta">Vantec · conversor-materia-prima.xlsx</p>
+              </div>
+              <div class="case-card__tags">
+                <span class="tag tag--accent">Excel</span>
+                <span class="tag">Estoque</span>
+                <span class="tag">Corte</span>
+              </div>
+            </header>
+            <div class="case-card__body">
+              <div class="psi-grid">
+                <div class="psi-block psi-block--problem">
+                  <p class="psi-block__label">Desafio</p>
+                  <p class="psi-block__text">A baixa de matéria-prima no setor de corte gerava quebras no estoque do sistema: a quantidade descontada não correspondia à conversão real entre dimensões físicas, peso e unidade cadastrada no ERP.</p>
+                </div>
+                <div class="psi-block psi-block--solution">
+                  <p class="psi-block__label">Solução</p>
+                  <p class="psi-block__text">Criei planilha de cálculos que converte dimensões e peso da peça em quantidade correta de MP para baixa no sistema, padronizando a regra de conversão usada pelo setor de corte.</p>
+                </div>
+                <div class="psi-block psi-block--impact">
+                  <p class="psi-block__label">Resultados</p>
+                  <p class="psi-block__text">Eliminação de quebras de estoque no sistema, maior rastreabilidade de material e confiabilidade nos saldos de matéria-prima.</p>
+                </div>
+              </div>
+              <div class="planilha-preview">
+                <div class="planilha-preview__header">
+                  <span>conversor-materia-prima.xlsx</span>
+                  <span class="planilha-preview__badge">Preview</span>
+                </div>
+                <div class="planilha-preview__table-wrap">
+                  <table>
+                    <thead><tr><th>Peça</th><th>Comp. (mm)</th><th>Larg. (mm)</th><th>Peso (kg)</th><th>MP (kg)</th><th>Status</th></tr></thead>
+                    <tbody>
+                      <tr><td>Base-042</td><td>1200</td><td>800</td><td>18,4</td><td>18,4</td><td>OK</td></tr>
+                      <tr><td>Flange-118</td><td>450</td><td>450</td><td>6,2</td><td>6,2</td><td>OK</td></tr>
+                      <tr><td>Tampa-205</td><td>600</td><td>400</td><td>4,8</td><td>4,8</td><td>OK</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case: Macros -->
+          <article class="case-card" data-category="ferramentas">
+            <header class="case-card__header">
+              <div>
+                <h3 class="case-card__title">Automação de Tarefas Repetitivas por Macros</h3>
+                <p class="case-card__meta">Vantec · VBA · Automação de interface</p>
+              </div>
+              <div class="case-card__tags">
+                <span class="tag tag--accent">Macros</span>
+                <span class="tag">VBA</span>
+                <span class="tag">Automação</span>
+              </div>
+            </header>
+            <div class="case-card__body">
+              <div class="psi-grid">
+                <div class="psi-block psi-block--problem">
+                  <p class="psi-block__label">Desafio</p>
+                  <p class="psi-block__text">Rotinas digitais repetitivas consumiam horas da equipe em cliques, cópias e conferências manuais entre sistemas, sem valor agregado analítico.</p>
+                </div>
+                <div class="psi-block psi-block--solution">
+                  <p class="psi-block__label">Solução</p>
+                  <p class="psi-block__text">Desenvolvi macros e scripts de automação para executar tarefas repetitivas, incluindo automação baseada em posição de pixels na interface, eliminando passos manuais do fluxo diário.</p>
+                </div>
+                <div class="psi-block psi-block--impact">
+                  <p class="psi-block__label">Resultados</p>
+                  <p class="psi-block__text">Redução significativa de tempo em tarefas operacionais, menos erros humanos e mais capacidade da equipe para atividades de análise e melhoria.</p>
+                </div>
+              </div>
+              <div class="planilha-preview">
+                <div class="planilha-preview__header">
+                  <span>Fluxo de automação · log de execução</span>
+                  <span class="planilha-preview__badge">Preview</span>
+                </div>
+                <div class="planilha-preview__table-wrap">
+                  <table>
+                    <thead><tr><th>Horário</th><th>Rotina</th><th>Ação</th><th>Tempo</th><th>Status</th></tr></thead>
+                    <tbody>
+                      <tr><td>08:02:14</td><td>rotina_importacao</td><td>Importação automática</td><td>1,2s</td><td>OK</td></tr>
+                      <tr><td>08:02:16</td><td>rotina_validacao</td><td>Conferência em camadas</td><td>0,8s</td><td>OK</td></tr>
+                      <tr><td>08:02:18</td><td>rotina_registro_erp</td><td>Registro no ERP</td><td>2,1s</td><td>OK</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          </div>
         </div>
       </section>
 
@@ -414,6 +835,7 @@
                 <span class="skill-chip">VBA (Macros)</span>
                 <span class="skill-chip">Excel Intermediário</span>
                 <span class="skill-chip">Automação de Rotinas</span>
+                <span class="skill-chip">Kaizen</span>
               </div>
             </div>
             <div class="skill-group">
@@ -422,7 +844,7 @@
                 Sistemas Corporativos
               </h3>
               <div class="skill-list">
-                <span class="skill-chip">ERP Logix (MAN10021)</span>
+                <span class="skill-chip">ERP Logix · MOD-CF</span>
                 <span class="skill-chip">TeamCenter</span>
                 <span class="skill-chip">Governança de Dados</span>
               </div>
@@ -448,8 +870,11 @@
               <div class="skill-list">
                 <span class="skill-chip">Classificação NCM</span>
                 <span class="skill-chip">Análise CAPEX/OPEX</span>
+                <span class="skill-chip">Make-or-Buy</span>
+                <span class="skill-chip">Custo de Oportunidade</span>
+                <span class="skill-chip">DFM</span>
+                <span class="skill-chip">SGQ / POPs</span>
                 <span class="skill-chip">Mitigação de Riscos</span>
-                <span class="skill-chip">Bases de Dados Operacionais</span>
               </div>
             </div>
           </div>
@@ -467,6 +892,7 @@
                 <span class="skill-chip">Entrega de Resultados Práticos</span>
                 <span class="skill-chip">Aprendizado Contínuo</span>
                 <span class="skill-chip">Colaboração Multidisciplinar</span>
+                <span class="skill-chip">Identificação e Resolução de Erros</span>
               </div>
             </div>
           </div>
@@ -504,6 +930,18 @@
                   <td>Leitura crítica de projetos CAD/BIM</td>
                   <td>Identificação de falhas operacionais, gargalos e peças inviáveis na linha de produção</td>
                 </tr>
+                <tr>
+                  <td>Otimização de geometria e make-or-buy</td>
+                  <td>Redução comprovada de custo de MP, liberação de capacidade fabril e decisões baseadas em custo total</td>
+                </tr>
+                <tr>
+                  <td>Implantação de SGQ com POPs no TeamCenter</td>
+                  <td>Padronização de projetos, fluxo de status e fim de retrabalhos entre Engenharia e PCP</td>
+                </tr>
+                <tr>
+                  <td>Planilhas e ferramentas operacionais (Excel)</td>
+                  <td>Catálogo de operações, conversor de MP e matriz de capacidade de máquinas</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -531,6 +969,8 @@
                 <li><strong>Interface estratégica:</strong> conexão entre as áreas de engenharia (projetos), produção (chão de fábrica) e suprimentos (compras e logística)</li>
                 <li><strong>Eficiência fiscal e compliance:</strong> estruturação de dados fiscais e padronização rigorosa de códigos NCM, garantindo conformidade tributária e operacional</li>
                 <li><strong>Melhoria contínua:</strong> mapeamento prático de fluxos AS-IS para encontrar redundâncias e propor novos fluxos que economizam tempo e recursos, incluindo automação no ERP Logix e TeamCenter</li>
+                <li><strong>Redução de custos:</strong> estudos de geometria de chapas, make-or-buy, DFM e viabilidade de proteções com moldes plásticos, com economias comprovadas em matéria-prima e mão de obra</li>
+                <li><strong>Qualidade e governança:</strong> implantação de SGQ na engenharia com 5 POPs, padronização no TeamCenter e ferramentas operacionais em Excel para corte, operações e máquinas</li>
               </ul>
             </article>
           </div>
@@ -620,14 +1060,63 @@
       </section>
 
       <footer class="site-footer">
-        <p>&copy; 2025 <span>Eduarda Cristina dos Santos</span> · Portfólio Profissional · DOC-2025-ECS-002</p>
+        <p>&copy; 2025 <span>Eduarda Cristina dos Santos</span>Portfólio Profissional</p>
       </footer>
 
     </main>
   </div>
 
+  <nav class="mobile-nav" aria-label="Navegação rápida mobile">
+    <ul class="mobile-nav__list">
+      <li class="mobile-nav__item">
+        <a href="#inicio" class="mobile-nav__link is-active" data-section="inicio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Início
+        </a>
+      </li>
+      <li class="mobile-nav__item">
+        <a href="#casos" class="mobile-nav__link" data-section="casos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          Casos
+        </a>
+      </li>
+      <li class="mobile-nav__item">
+        <a href="#dashboard" class="mobile-nav__link" data-section="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Painel
+        </a>
+      </li>
+      <li class="mobile-nav__item">
+        <a href="#sobre" class="mobile-nav__link" data-section="sobre">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Perfil
+        </a>
+      </li>
+      <li class="mobile-nav__item">
+        <button type="button" class="mobile-nav__btn" id="mobileNavMenu" aria-label="Abrir menu completo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          Menu
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="photo-lightbox" id="photoLightbox" role="dialog" aria-modal="true" aria-labelledby="photoLightboxTitle" aria-hidden="true">
+    <button type="button" class="photo-lightbox__backdrop" data-photo-close aria-label="Fechar foto ampliada"></button>
+    <figure class="photo-lightbox__dialog">
+      <button type="button" class="photo-lightbox__close" data-photo-close aria-label="Fechar foto">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <img class="photo-lightbox__img" src="assets/img/eu.jpeg" alt="Eduarda Cristina dos Santos">
+      <figcaption class="photo-lightbox__caption" id="photoLightboxTitle">Eduarda Cristina dos Santos</figcaption>
+      <p class="photo-lightbox__role">Analista de Processos · Indústria</p>
+    </figure>
+  </div>
+
+  <script src="js/theme.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/cases.js" defer></script>
   <script src="js/dashboard.js" defer></script>
 </body>
 </html>
